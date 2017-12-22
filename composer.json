@@ -54,7 +54,10 @@
     },
     "wordpress-install-dir": "web/wp",
     "paas": {
-      "compile": ["vendor/bin/wp plugin activate S3-Uploads"]
+      "compile": [
+	      "vendor/bin/wp plugin activate s3-uploads",
+	      "vendor/bin/wp s3-uploads enable"
+      ]
     }
   },
   "scripts": {
