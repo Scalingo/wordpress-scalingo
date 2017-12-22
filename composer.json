@@ -52,7 +52,10 @@
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
-    "wordpress-install-dir": "web/wp"
+    "wordpress-install-dir": "web/wp",
+    "paas": {
+      "compile": ["vendor/bin/wp plugin activate S3-Uploads"]
+    }
   },
   "scripts": {
     "post-root-package-install": [
@@ -61,10 +64,5 @@
     "test": [
       "vendor/bin/phpcs"
     ]
-  },
-  "extra": {
-    "paas": {
-      "compile": ["wp plugin activate S3-Uploads"]
-    }
   }
 }
