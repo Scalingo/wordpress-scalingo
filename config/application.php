@@ -48,10 +48,13 @@ define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 /**
  * DB settings
  */
-define('DB_NAME', env('DB_NAME'));
-define('DB_USER', env('DB_USER'));
-define('DB_PASSWORD', env('DB_PASSWORD'));
-define('DB_HOST', env('DB_HOST') ?: 'localhost');
+$mysql_url = parse_url(env('DATABASE_URL') ?: 'mysql://localhost:3306/wp-bedrock');
+$db = substr($mysql_url['path'], 1);
+
+define('DB_NAME', $db);
+define('DB_USER', $mysql_url['user']);
+define('DB_PASSWORD', $mysql_url['pass']);
+define('DB_HOST', $mysql_url['host'] . ":" . $mysql_url['port']);
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 $table_prefix = env('DB_PREFIX') ?: 'wp_';
