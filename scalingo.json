@@ -1,0 +1,62 @@
+{
+	"name": "Scalingo Wordpress",
+	"repository": "https://github.com/Scalingo/scalingo-wordpress",
+	"description": "12 factor Wordpress based on bedrock with S3 Plugin enabled",
+	"logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg",
+	"env": {
+		"WP_ENV": {
+			"value": "production"
+		},
+		"WP_HOME": {
+			"generator": "url"
+		},
+		"WP_SITEURL": {
+			"value": "%URL%/wp"
+		},
+		"S3_UPLOADS_BUCKET": {
+			"description": "Name of the bucket used by wordpress to upload media"
+		},
+		"S3_UPLOADS_KEY": {
+			"description": "AWS Access Key ID"
+		},
+		"S3_UPLOADS_SECRET": {
+			"description": "AWS Access Secret Key"
+		},
+		"S3_UPLOADS_REGION": {
+			"description": "Region of the S3 bucket"
+		},
+		"AUTH_KEY" : {
+			"generator": "secret"
+		},
+		"SECURE_AUTH_KEY": {
+			"generator": "secret"
+		}",
+		"LOGGED_IN_KEY": {
+			"generator": "secret"
+		},
+		"NONCE_KEY": {
+			"generator": "secret"
+		},
+		"AUTH_SALT": {
+			"generator": "secret"
+		},
+		"SECURE_AUTH_SALT": {
+			"generator": "secret"
+		},
+		"LOGGED_IN_SALT": {
+			"generator": "secret"
+		},
+		"NONCE_SALT": {
+			"generator": "secret"
+		}
+	},
+	"formation": {
+		"web": {
+			"name": 1,
+			"size": "S"
+		}
+	},
+	"addons": [
+		"scalingo-mysql:free"
+	]
+}
