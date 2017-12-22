@@ -57,6 +57,6 @@
 		}
 	},
 	"addons": [
-		"scalingo-mysql:free"
+		"scalingo-mysql"
 	]
 }
