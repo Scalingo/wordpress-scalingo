@@ -30,7 +30,7 @@
 		},
 		"SECURE_AUTH_KEY": {
 			"generator": "secret"
-		}",
+		},
 		"LOGGED_IN_KEY": {
 			"generator": "secret"
 		},
