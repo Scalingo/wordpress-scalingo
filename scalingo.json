@@ -8,10 +8,13 @@
 			"value": "production"
 		},
 		"WP_HOME": {
-			"generator": "url"
+			"generator": "url",
+			"description": "Contain the URL to access your app, can be changed later"
 		},
 		"WP_SITEURL": {
-			"value": "%URL%/wp"
+			"generator": "url",
+			"template": "%URL%/wp",
+			"description": "Contain the URL to access your app dashboard"
 		},
 		"S3_UPLOADS_BUCKET": {
 			"description": "Name of the bucket used by wordpress to upload media"
