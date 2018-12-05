@@ -62,3 +62,5 @@ git push scalingo master
 ```
 
 5. Access WP admin at `https://my-wordpress.scalingo.io/wp/wp-admin`
+
+[roots-wp-salt]:https://roots.io/salts.html
