@@ -79,6 +79,17 @@ define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
 
 /**
+ * S3 Uploads Plugin
+ */
+define('S3_UPLOADS_BUCKET', getenv('S3_UPLOADS_BUCKET') );
+define('S3_UPLOADS_KEY', getenv('S3_UPLOADS_KEY') );
+define('S3_UPLOADS_SECRET', getenv('S3_UPLOADS_SECRET') );
+define('S3_UPLOADS_REGION', getenv('S3_UPLOADS_REGION') );
+define('S3_UPLOADS_HTTP_CACHE_CONTROL', getenv('S3_UPLOADS_HTTP_CACHE_CONTROL') );
+define('S3_UPLOADS_HTTP_EXPIRES', getenv('S3_UPLOADS_HTTP_EXPIRES') );
+define('S3_UPLOADS_BUCKET_URL', getenv('S3_UPLOADS_BUCKET_URL') );
+
+/**
  * Bootstrap WordPress
  */
 if (!defined('ABSPATH')) {
