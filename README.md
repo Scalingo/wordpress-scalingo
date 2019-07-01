@@ -29,7 +29,7 @@ Based on [Bedrock](https://roots.io/bedrock/)
 git clone https://github.com/Scalingo/scalingo-wordpress
 cd scalingo-wordpress
 scalingo create my-wordpress
-scalingo addons-add scalingo-mysql free
+scalingo addons-add mysql mysql-sandbox
 ```
 
 2. Update the application environment through the dashboard or with the
