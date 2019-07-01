@@ -63,4 +63,19 @@ git push scalingo master
 
 5. Access WP admin at `https://my-wordpress.scalingo.io/wp/wp-admin`
 
+## Use in Development
+
+A Docker Compose file is available to run the WordPress locally. You first need
+to install the dependencies with:
+
+```
+docker-compose run composer install --prefer-source --no-interaction
+```
+
+Then start the Nginx:
+
+```
+docker-compose up nginx
+```
+
 [roots-wp-salt]:https://roots.io/salts.html
