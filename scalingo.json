@@ -60,6 +60,6 @@
 		}
 	},
 	"addons": [
-		"scalingo-mysql"
+		"mysql"
 	]
 }
