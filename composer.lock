@@ -729,16 +729,16 @@
         },
         {
             "name": "humanmade/s3-uploads",
-            "version": "v2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/S3-Uploads.git",
-                "reference": "70d50a23b2665a02abd410647c887306decfe940"
+                "reference": "f17559cba87e0a0a0191a747f62c74dbde60208d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/70d50a23b2665a02abd410647c887306decfe940",
-                "reference": "70d50a23b2665a02abd410647c887306decfe940",
+                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/f17559cba87e0a0a0191a747f62c74dbde60208d",
+                "reference": "f17559cba87e0a0a0191a747f62c74dbde60208d",
                 "shasum": ""
             },
             "require": {
@@ -762,7 +762,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-03-13T15:10:11+00:00"
+            "time": "2019-04-16T05:09:44+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
