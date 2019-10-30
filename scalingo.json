@@ -1,6 +1,6 @@
 {
 	"name": "Scalingo Wordpress",
-	"repository": "https://github.com/Scalingo/scalingo-wordpress",
+	"repository": "https://github.com/brandon-welsch/scalingo-wordpress",
 	"description": "12 factor Wordpress based on bedrock with S3 Plugin enabled",
 	"logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg",
 	"env": {
