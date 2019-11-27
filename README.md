@@ -1,9 +1,4 @@
-# Scalingo 12-Factor Wordpress Distribution
-
-* Configurable from environment
-* Uploads sent to S3 by default
-
-[![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
+# Scalingo 12-Factor WordPress Distribution
 
 ## Features
 
@@ -16,25 +11,71 @@ Based on [Bedrock](https://roots.io/bedrock/)
 * Autoloader for mu-plugins (use regular plugins as mu-plugins)
 * Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
-## Requirements
+With few more features added by `Scalingo`:
 
-* PHP >= 7.1
-* Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+* Configurable from var environment
+* File Uploads sent to S3 Bucket by default with [S3-Uploads plugin](https://github.com/humanmade/S3-Uploads)
+
+Actual WordPress version : `5.3`
 
 ## Installation
 
+### One-click installation
+
+[![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
+
+### Manual installation
+
 1. Clone this distribution
 
-```
+```bash
 git clone https://github.com/Scalingo/scalingo-wordpress
 cd scalingo-wordpress
+```
+
+2. Use Scalingo CLI for create the `app` and add `mysql addon`
+
+```bash
 scalingo create my-wordpress
 scalingo addons-add mysql mysql-sandbox
 ```
 
-2. Update the application environment through the dashboard or with the
-   [Scalingo command line](http://cli.scalingo.com) `scalingo env-set
-   VARIABLE_NAME=VALUE`
+3. Create an S3 Bucket on AWS and configure IAM user correctly
+
+IAM user security policy example:
+```bash
+"Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:PutObjectAclVersion",
+        "s3:AbortMultipartUpload",
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bucketname-here"
+    },
+    {
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:PutObjectAclVersion",
+        "s3:AbortMultipartUpload",
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bucketname-here/*"
+    }
+  ]
+}
+```
+
+3. Update the application environment through the dashboard or with the
+   [Scalingo command line](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`
 
   * `DATABASE_URL` - Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
   * `WP_ENV` - Set to environment (`development`, `staging`, `production`)
@@ -48,11 +89,11 @@ scalingo addons-add mysql mysql-sandbox
 
   You can get some random salts on the [Roots WordPress Salt Generator][roots-wp-salt].
 
-3. Add theme(s) in `web/app/themes` as you would for a normal WordPress site.
+4. Add theme(s) in `web/app/themes` as you would for a normal WordPress site.
 
-4. Deploy the application on Scalingo
+5. Deploy the application on Scalingo
 
-```
+```bash
 # Optionally add theme to your git repository
 git add web/app/themes
 git commit -m "Add themes"
@@ -61,9 +102,18 @@ git commit -m "Add themes"
 git push scalingo master
 ```
 
-5. Access WP admin at `https://my-wordpress.scalingo.io/wp/wp-admin`
+6. Access WP admin at `https://my-wordpress.scalingo.io/wp/wp-admin`
+
+7. Activate `S3 Uploads` plugin on WordPress plugin page at `https://my-wordpress.scalingo.io/wp/wp-admin/plugins.php`
 
 ## Use in Development
+
+### Requirements
+
+* PHP >= 7.1
+* Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+
+### Run locally with Docker
 
 A Docker Compose file is available to run the WordPress locally. You first need
 to install the dependencies with:
@@ -77,3 +127,7 @@ Then start the Nginx:
 ```
 docker-compose up nginx
 ```
+
+## Documentation
+
+[Bedrock](https://roots.io/bedrock/) documentation is available at [https://roots.io/bedrock/docs](https://roots.io/bedrock/docs).
