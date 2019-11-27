@@ -17,13 +17,14 @@
     }
   ],
   "keywords": [
-    "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp"
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
     "forum": "https://discourse.roots.io/category/bedrock"
   },
   "config": {
+    "optimize-autoloader": true,
     "preferred-install": "dist"
   },
   "repositories": [
@@ -34,20 +35,22 @@
   ],
   "require": {
     "php": ">=7.1",
-    "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^3.0.0",
-    "oscarotero/env": "^1.1.0",
-    "roots/wordpress": "5.1",
+    "composer/installers": "^1.7",
+    "vlucas/phpdotenv": "^3.6.0",
+    "oscarotero/env": "^1.2.0",
+    "roots/wordpress": "5.3",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "humanmade/s3-uploads": "*",
-    "wp-cli/wp-cli" : "~0.22",
-    "psy/psysh" : "~0.6"
+    "humanmade/s3-uploads": "~2.2",
+    "wp-cli/wp-cli" : "~2.4",
+    "psy/psysh" : "~0.9"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.0.2",
+    "squizlabs/php_codesniffer": "^3.4.2",
     "roave/security-advisories": "dev-master"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
@@ -55,14 +58,14 @@
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": "web/wp",
-    "paas": { }
+    "paas": {}
   },
   "scripts": {
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],
     "test": [
-      "vendor/bin/phpcs"
+      "phpcs"
     ]
   }
 }
