@@ -18,7 +18,7 @@ Based on [Bedrock](https://roots.io/bedrock/)
 
 ## Requirements
 
-* PHP >= 5.6
+* PHP >= 7.1
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
 ## Installation
@@ -77,5 +77,3 @@ Then start the Nginx:
 ```
 docker-compose up nginx
 ```
-
-[roots-wp-salt]:https://roots.io/salts.html

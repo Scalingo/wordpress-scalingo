@@ -1,3 +1,112 @@
+### 1.12.8: 2019-09-05
+
+* Update to WordPress 5.2.3 ([#466](https://github.com/roots/bedrock/pull/466))
+* Remove `phpcs.xml` from `.gitattributes` ([#464](https://github.com/roots/bedrock/pull/464))
+* `ini_set()` fixes ([#463](https://github.com/roots/bedrock/pull/463))
+* Editorconfig updates ([#457](https://github.com/roots/bedrock/pull/457))
+* Bump `composer/installers` ([#462](https://github.com/roots/bedrock/pull/462))
+* Better default composer options ([#456](https://github.com/roots/bedrock/pull/456))
+* Ignore `.log` files ([#440](https://github.com/roots/bedrock/pull/440))
+* Change to CircleCI ([82945d8](https://github.com/roots/bedrock/commit/82945d803d10cb072b7e786e0a81094ccb2d067b), [#460](https://github.com/roots/bedrock/pull/460))
+
+### 1.12.7: 2019-06-19
+
+* Update to WordPress 5.2.2 ([#444](https://github.com/roots/bedrock/pull/444))
+* Bump `oscarotero/env` ([#443](https://github.com/roots/bedrock/pull/443))
+* Bump `vlucas/phpdotenv` ([#442](https://github.com/roots/bedrock/pull/442))
+* Bump `squizlabs/php_codesniffer` ([#441](https://github.com/roots/bedrock/pull/441))
+* Remove unnecessary static variables ([#437](https://github.com/roots/bedrock/pull/437))
+
+### 1.12.6: 2019-05-21
+
+* Update to WordPress 5.2.1 ([#436](https://github.com/roots/bedrock/pull/436))
+
+### 1.12.5: 2019-05-14
+
+* Disable WordPress' built-in fatal error handler on development ([#432](https://github.com/roots/bedrock/pull/434))
+
+### 1.12.4: 2019-05-07
+
+* Update to WordPress 5.2 ([#432](https://github.com/roots/bedrock/pull/432))
+* Configure WP-CLI `wp server` webroot ([#427](https://github.com/roots/bedrock/pull/427))
+* Fix issue with `bedrock_autoloader` option ([#386](https://github.com/roots/bedrock/pull/386))
+
+### 1.12.3: 2019-03-13
+
+* Update to WordPress 5.1.1 ([#426](https://github.com/roots/bedrock/pull/426))
+
+### 1.12.2: 2019-02-21
+
+* Update to WordPress 5.1 ([#420](https://github.com/roots/bedrock/pull/420))
+
+### 1.12.1: 2019-02-14
+
+* Update `vlucas/phpdotenv` ([#417](https://github.com/roots/bedrock/pull/417))
+* Make DSN implementation more uniform ([#415](https://github.com/roots/bedrock/pull/415))
+
+### 1.12.0: 2019-02-07
+
+* Support database DSN ([#414](https://github.com/roots/bedrock/pull/414))
+* Detect HTTPS if WordPress is behind a reverse proxy ([#413](https://github.com/roots/bedrock/pull/413))
+* Update `vlucas/phpdotenv` to `^3` ([#412](https://github.com/roots/bedrock/pull/412))
+
+### 1.11.1: 2019-01-09
+
+* Update to WordPress 5.0.3 ([#408](https://github.com/roots/bedrock/pull/408))
+
+### 1.11.0: 2018-12-19
+
+* Bump PHP requirement to >= 7.1 ([#405](https://github.com/roots/bedrock/pull/405))
+
+### 1.10.2: 2018-12-19
+
+* Update to WordPress 5.0.2 ([#406](https://github.com/roots/bedrock/pull/406))
+
+### 1.10.1: 2018-12-12
+
+* Update to WordPress 5.0.1 ([#403](https://github.com/roots/bedrock/pull/403))
+
+### 1.10.0: 2018-12-09
+
+* Update to WordPress 5.0, switch from `johnpbloch/wordpress` to `roots/wordpress` package ([#395](https://github.com/roots/bedrock/pull/395))
+
+### 1.9.0: 2018-09-17
+
+* Fix error display in development environments ([c457082](https://github.com/roots/bedrock/commit/c457082cf4b153400d3e34f4f68a30eea4cc7c38))
+* --prefer-dist on roave/security-advisories ([#381](https://github.com/roots/bedrock/pull/381))
+* New Bedrock Configuration Model ([#380](https://github.com/roots/bedrock/pull/380))
+* Remove vendor/.gitkeep ([#379](https://github.com/roots/bedrock/pull/379))
+* Composer 1.7.0 lockfile ([#378](https://github.com/roots/bedrock/pull/378))
+* Adds roave/security-advisories to composer dev deps ([#376](https://github.com/roots/bedrock/pull/376))
+
+### 1.8.12: 2018-08-03
+
+* Update to WordPress 4.9.8
+
+### 1.8.11: 2018-07-09
+
+* Update to WordPress 4.9.7
+
+### 1.8.10: 2018-05-18
+
+* Update to WordPress 4.9.6
+
+### 1.8.9: 2018-04-04
+
+* Update to WordPress 4.9.5
+
+### 1.8.8: 2018-02-06
+
+* Update to WordPress 4.9.4
+
+### 1.8.7: 2018-02-05
+
+* Update to WordPress 4.9.3
+
+### 1.8.6: 2018-01-16
+
+* Update to WordPress 4.9.2
+
 ### 1.8.5: 2017-11-29
 
 * Update to WordPress 4.9.1
