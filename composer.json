@@ -43,7 +43,8 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "humanmade/s3-uploads": "~2.2",
     "wp-cli/wp-cli" : "~2.4",
-    "psy/psysh" : "~0.9"
+    "psy/psysh" : "~0.9",
+    "ext-imagick": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
