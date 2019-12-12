@@ -5,7 +5,7 @@
 Based on [Bedrock](https://roots.io/bedrock/)
 
 * Better folder structure
-* Dependency management with [Composer](http://getcomposer.org)
+* Dependency management with [Composer](http://getcomposer.org) and [WordPress Packagist](https://wpackagist.org/)
 * Easy WordPress configuration with environment specific files
 * Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
 * Autoloader for mu-plugins (use regular plugins as mu-plugins)
@@ -110,22 +110,50 @@ git push scalingo master
 
 ### Requirements
 
-* PHP >= 7.1
-* Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+* [Docker](https://docs.docker.com/install/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Run locally with Docker
+### Run locally
 
 A Docker Compose file is available to run the WordPress locally. You first need
 to install the dependencies with:
 
-```
-docker-compose run composer install --prefer-source --no-interaction
+```bash
+docker-compose run --rm composer install --prefer-source --no-interaction
 ```
 
 Then start the Nginx:
 
-```
+```bash
 docker-compose up nginx
+```
+
+#### Install Wordpress Plugin
+
+Simple command for install plugins:
+```bash
+docker-compose run --rm composer require --ignore-platform-reqs wpackagist-plugin/{PLUGIN_NAME}
+```
+
+You can find `plugins` on [Wordpress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
+
+Example to install `akismet` plugin:
+```bash
+docker-compose run --rm composer require --ignore-platform-reqs wpackagist-plugin/akismet
+```
+
+#### Install Wordpress Theme
+
+Simple command for install themes:
+```bash
+docker-compose run --rm composer require --ignore-platform-reqs wpackagist-theme/{THEME_NAME}
+```
+
+You can find `themes` on [Wordpress Packagist](https://wpackagist.org/search?q=&type=theme&search=)
+
+Example to install `hueman` theme:
+```bash
+docker-compose run --rm composer require --ignore-platform-reqs wpackagist-theme/hueman
 ```
 
 ## Documentation
