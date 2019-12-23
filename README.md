@@ -44,7 +44,8 @@ scalingo addons-add mysql mysql-sandbox
 
 IAM user security policy example:
 ```bash
-"Version": "2012-10-17",
+{
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Action": [
