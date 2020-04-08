@@ -5,28 +5,35 @@
 	"logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg",
 	"env": {
 		"WP_ENV": {
-			"value": "production"
+			"value": "production",
+			"required": true
 		},
 		"WP_HOME": {
 			"generator": "url",
-			"description": "Contain the URL to access your app, can be changed later"
+			"description": "Contain the URL to access your app, can be changed later",
+			"required": true
 		},
 		"WP_SITEURL": {
 			"generator": "url",
 			"template": "%URL%/wp",
-			"description": "Contain the URL to access your app dashboard"
+			"description": "Contain the URL to access your app dashboard",
+			"required": true
 		},
 		"S3_UPLOADS_BUCKET": {
-			"description": "Name of the bucket used by wordpress to upload media"
+			"description": "Name of the bucket used by wordpress to upload media",
+			"required": false
 		},
 		"S3_UPLOADS_KEY": {
-			"description": "AWS Access Key ID"
+			"description": "AWS Access Key ID",
+			"required": false
 		},
 		"S3_UPLOADS_SECRET": {
-			"description": "AWS Access Secret Key"
+			"description": "AWS Access Secret Key",
+			"required": false
 		},
 		"S3_UPLOADS_REGION": {
-			"description": "Region of the S3 bucket"
+			"description": "Region of the S3 bucket",
+			"required": false
 		},
 		"AUTH_KEY" : {
 			"generator": "secret"
