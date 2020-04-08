@@ -21,7 +21,7 @@ Actual WordPress version : `5.3`
 ## Installation
 
 The variables `S3_UPLOADS_BUCKET`, `S3_UPLOADS_KEY`, `S3_UPLOADS_SECRET`, `S3_UPLOADS_REGION`
-are not required when you don't want to use WordPress image upload with S3.
+are not required when you don't want to use the WordPress image upload with S3.
 
 In reverse, if you activate the already preinstalled S3 plugin you must specify these variables.
 
