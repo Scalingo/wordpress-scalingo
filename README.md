@@ -20,6 +20,11 @@ Actual WordPress version : `5.3`
 
 ## Installation
 
+The variables `S3_UPLOADS_BUCKET`, `S3_UPLOADS_KEY`, `S3_UPLOADS_SECRET`, `S3_UPLOADS_REGION`
+are not required when you don't want to use the WordPress image upload with S3.
+
+In reverse, if you activate the already preinstalled S3 plugin you must specify these variables.
+
 ### One-click installation
 
 [![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
@@ -40,7 +45,7 @@ scalingo create my-wordpress
 scalingo addons-add mysql mysql-sandbox
 ```
 
-3. Create an S3 Bucket on AWS and configure IAM user correctly
+3. Create an S3 Bucket on AWS and configure IAM user correctly (only if you want to use image upload with S3)
 
 IAM user security policy example:
 ```bash
@@ -79,13 +84,13 @@ IAM user security policy example:
    [Scalingo command line](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`
 
   * `DATABASE_URL` - Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
-  * `WP_ENV` - Set to environment (`development`, `staging`, `production`)
-  * `WP_HOME` - Full URL to WordPress home (http://my-wordpress.scalingo.io)
-  * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://my-wordpress.scalingo.io/wp)
-  * `S3_UPLOADS_BUCKET` - Name of the S3 bucket to upload files to
-  * `S3_UPLOADS_KEY` - AWS Access Key ID for S3 authentication
-  * `S3_UPLOADS_SECRET` - AWS Secret Key for S3 authentication
-  * `S3_UPLOADS_REGION` - Region of the S3 bucket
+  * `WP_ENV` - Set to environment (`development`, `staging`, `production`) (required)
+  * `WP_HOME` - Full URL to WordPress home (http://my-wordpress.scalingo.io) (required)
+  * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://my-wordpress.scalingo.io/wp) (required)
+  * `S3_UPLOADS_BUCKET` - Name of the S3 bucket to upload files to (optional)
+  * `S3_UPLOADS_KEY` - AWS Access Key ID for S3 authentication (optional)
+  * `S3_UPLOADS_SECRET` - AWS Secret Key for S3 authentication (optional)
+  * `S3_UPLOADS_REGION` - Region of the S3 bucket (optional)
   * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
   You can get some random salts on the [Roots WordPress Salt Generator][roots-wp-salt].
