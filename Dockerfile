@@ -5,6 +5,10 @@ RUN apt-get update && apt-get install -y curl git
 RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev \
   && docker-php-ext-install -j$(nproc) zip
 
+RUN apt-get update && apt-get install -y libmagickwand-dev \
+  && pecl install imagick \
+  && echo 'extension=imagick.so' >> /usr/local/etc/php/conf.d/docker-pecl-imagick.ini
+
 RUN docker-php-ext-install mysqli
 
 RUN curl -sS https://getcomposer.org/installer | php \
