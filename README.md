@@ -16,7 +16,7 @@ With few more features added by `Scalingo`:
 * Configurable from var environment
 * File Uploads sent to S3 Bucket by default with [S3-Uploads plugin](https://github.com/humanmade/S3-Uploads)
 
-Actual WordPress version : `5.3`
+Actual WordPress version : `5.5`
 
 ## Installation
 
@@ -118,6 +118,18 @@ git push scalingo master
 
 * [Docker](https://docs.docker.com/install/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Updating WordPress version
+
+Update package.json to update the WordPress branch you need.
+
+Then run:
+
+```
+└> docker-compose run --rm scalingo-wordpress composer update
+```
+
+Run locally to test WordPress is working, then commit `composer.json` and `composer.lock`.
 
 ### Run locally
 
