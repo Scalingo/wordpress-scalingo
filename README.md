@@ -129,7 +129,7 @@ Then run:
 └> docker-compose run --rm scalingo-wordpress composer update
 ```
 
-Run locally to test wordpress is working, then commit `composer.json` and `composer.lock`.
+Run locally to test WordPress is working, then commit `composer.json` and `composer.lock`.
 
 ### Run locally
 
