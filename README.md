@@ -25,6 +25,9 @@ are not required when you don't want to use the WordPress image upload with S3.
 
 In reverse, if you activate the already preinstalled S3 plugin you must specify these variables.
 
+By default, the default AWS endpoint (s3.amazonaws.com) will be used.
+Be careful of that if you're using another provider.
+
 ### Use another S3 provider
 
 If you want to use another provider than AWS for your S3 bucket.
