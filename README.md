@@ -126,7 +126,7 @@ Update package.json to update the WordPress branch you need.
 Then run:
 
 ```
-└> docker-compose run --rm scalingo-wordpress composer update
+└> docker-compose run --rm web composer update
 ```
 
 Run locally to test WordPress is working, then commit `composer.json` and `composer.lock`.
@@ -137,7 +137,7 @@ A Docker Compose file is available to run the WordPress locally. You first need
 to install the dependencies with:
 
 ```bash
-docker-compose run --rm composer install --prefer-source --no-interaction
+docker-compose run --rm composer install --prefer-source --no-interaction --ignore-platform-reqs
 ```
 
 Then start the Nginx:
