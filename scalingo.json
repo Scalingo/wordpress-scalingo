@@ -32,7 +32,11 @@
 			"required": false
 		},
 		"S3_UPLOADS_REGION": {
-			"description": "Region of the S3 bucket",
+			"description": "Region Name of the S3 bucket provider",
+			"required": false
+		},
+		"S3_UPLOADS_ENDPOINT": {
+			"description": "Endpoint URL of the S3 bucket provider",
 			"required": false
 		},
 		"AUTH_KEY" : {
