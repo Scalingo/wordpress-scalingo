@@ -12,5 +12,15 @@ define('S3_UPLOADS_SECRET', env('S3_UPLOADS_SECRET'));
 define('S3_UPLOADS_REGION', env('S3_UPLOADS_REGION'));
 define('S3_UPLOADS_ENDPOINT', env('S3_UPLOADS_ENDPOINT'));
 
+if (env('S3_UPLOADS_ENDPOINT')) {
+    $s3_endpoint = env('S3_UPLOADS_ENDPOINT');
+    $s3_bucket_name = env('S3_UPLOADS_BUCKET');
+    $parts = parse_url($s3_endpoint);
+    $bucket_url = $parts['scheme'] . "://" . $s3_bucket_name . "." . $parts['host'];
+
+    // Define the base bucket URL (without trailing slash)
+    define('S3_UPLOADS_BUCKET_URL', $bucket_url);
+}
+
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
     $_SERVER['HTTPS'] = 'on';
