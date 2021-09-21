@@ -16,7 +16,7 @@ With few more features added by `Scalingo`:
 * Configurable from var environment
 * File Uploads sent to S3 Bucket by default with [S3-Uploads plugin](https://github.com/humanmade/S3-Uploads)
 
-Actual WordPress version : `5.5`
+> Actual WordPress version : `5.5`
 
 ## Installation
 
