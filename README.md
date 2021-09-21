@@ -25,6 +25,30 @@ are not required when you don't want to use the WordPress image upload with S3.
 
 In reverse, if you activate the already preinstalled S3 plugin you must specify these variables.
 
+### Use another S3 provider
+
+If you want to use another provider than AWS for your S3 bucket.
+You may want to use the environment variable named `S3_UPLOADS_ENDPOINT` to specify your provider URL.
+
+Example with Scaleway provider:
+```
+S3_UPLOADS_ENDPOINT=s3.fr-par.scw.cloud
+```
+
+### Override the Bucket URL
+
+If you want to specify the full URL of the bucket yourself or even specify a specific folder where your uploads will go.
+You may want to use the environment variable named `S3_UPLOADS_BUCKET_URL`.
+
+Examples with Scaleway provider:
+```
+S3_UPLOADS_BUCKET_URL=your-bucket-name.s3.fr-par.scw.cloud
+```
+
+```
+S3_UPLOADS_BUCKET_URL=your-bucket-name.s3.fr-par.scw.cloud/wordpress/uploads
+```
+
 ### One-click installation
 
 [![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
@@ -125,7 +149,7 @@ Update package.json to update the WordPress branch you need.
 
 Then run:
 
-```
+```shell
 └> docker-compose run --rm web composer update
 ```
 
