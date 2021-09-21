@@ -6,21 +6,21 @@ define('SCRIPT_DEBUG', false);
 /** Disable all file modifications including updates and update notifications */
 define('DISALLOW_FILE_MODS', true);
 
-define('S3_UPLOADS_BUCKET', env('S3_UPLOADS_BUCKET'));
-define('S3_UPLOADS_KEY', env('S3_UPLOADS_KEY'));
-define('S3_UPLOADS_SECRET', env('S3_UPLOADS_SECRET'));
-define('S3_UPLOADS_REGION', env('S3_UPLOADS_REGION'));
-define('S3_UPLOADS_ENDPOINT', env('S3_UPLOADS_ENDPOINT'));
-define('S3_UPLOADS_BUCKET_URL', env('S3_UPLOADS_BUCKET_URL'));
-
-if (env('S3_UPLOADS_ENDPOINT') && env('S3_UPLOADS_BUCKET_URL') == '') {
-    $s3_endpoint = env('S3_UPLOADS_ENDPOINT');
-    $s3_bucket_name = env('S3_UPLOADS_BUCKET');
+define('S3_UPLOADS_BUCKET', getenv('S3_UPLOADS_BUCKET'));
+define('S3_UPLOADS_KEY', getenv('S3_UPLOADS_KEY'));
+define('S3_UPLOADS_SECRET', getenv('S3_UPLOADS_SECRET'));
+define('S3_UPLOADS_REGION', getenv('S3_UPLOADS_REGION'));
+define('S3_UPLOADS_ENDPOINT', getenv('S3_UPLOADS_ENDPOINT'));
+if (getenv('S3_UPLOADS_ENDPOINT') && getenv('S3_UPLOADS_BUCKET_URL') === false) {
+    $s3_endpoint = getenv('S3_UPLOADS_ENDPOINT');
+    $s3_bucket_name = getenv('S3_UPLOADS_BUCKET');
     $parts = parse_url($s3_endpoint);
     $bucket_url = $parts['scheme'] . "://" . $s3_bucket_name . "." . $parts['host'];
 
     // Define the base bucket URL (without trailing slash)
     define('S3_UPLOADS_BUCKET_URL', $bucket_url);
+} else {
+    define('S3_UPLOADS_BUCKET_URL', getenv('S3_UPLOADS_BUCKET_URL'));
 }
 
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
