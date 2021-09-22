@@ -25,13 +25,12 @@ are not required when you don't want to use the WordPress image upload with S3.
 
 In reverse, if you activate the already preinstalled S3 plugin you must specify these variables.
 
-By default, the default AWS endpoint (s3.amazonaws.com) will be used.
-Be careful of that if you're using another provider.
+By default, the AWS endpoint (s3.amazonaws.com) is used.
 
-### Use another S3 provider
+### Use Another Object Storage Provider
 
-If you want to use another provider than AWS for your S3 bucket.
-You may want to use the environment variable named `S3_UPLOADS_ENDPOINT` to specify your provider URL.
+If you want to use another provider than AWS for your S3 bucket, you must use
+the environment variable named `S3_UPLOADS_ENDPOINT` to specify your provider URL.
 
 Example with Scaleway provider:
 ```
@@ -40,14 +39,16 @@ S3_UPLOADS_ENDPOINT=s3.fr-par.scw.cloud
 
 ### Override the Bucket URL
 
-If you want to specify the full URL of the bucket yourself or even specify a specific folder where your uploads will go.
-You may want to use the environment variable named `S3_UPLOADS_BUCKET_URL`.
+If you want to specify the full URL of the bucket yourself or even specify
+a specific folder where your uploads will go, you may must use the
+environment variable named `S3_UPLOADS_BUCKET_URL`.
 
 Examples with Scaleway provider:
 ```
 S3_UPLOADS_BUCKET_URL=your-bucket-name.s3.fr-par.scw.cloud
 ```
 
+Example to upload the files in a specific folder:
 ```
 S3_UPLOADS_BUCKET_URL=your-bucket-name.s3.fr-par.scw.cloud/wordpress/uploads
 ```
