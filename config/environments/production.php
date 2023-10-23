@@ -11,6 +11,7 @@ define('S3_UPLOADS_KEY', getenv('S3_UPLOADS_KEY'));
 define('S3_UPLOADS_SECRET', getenv('S3_UPLOADS_SECRET'));
 define('S3_UPLOADS_REGION', getenv('S3_UPLOADS_REGION'));
 define('S3_UPLOADS_ENDPOINT', getenv('S3_UPLOADS_ENDPOINT'));
+define('S3_UPLOADS_OBJECT_ACL', getenv('S3_UPLOADS_OBJECT_ACL'));
 if (getenv('S3_UPLOADS_ENDPOINT') && getenv('S3_UPLOADS_BUCKET') && !getenv('S3_UPLOADS_BUCKET_URL')) {
     $s3_uploads_endpoint = getenv('S3_UPLOADS_ENDPOINT');
     $s3_uploads_bucket = getenv('S3_UPLOADS_BUCKET');
