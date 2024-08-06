@@ -1,7 +1,5 @@
 # Scalingo 12-Factor WordPress Distribution
 
-## Features
-
 Based on [Bedrock](https://roots.io/bedrock/)
 
 * Better folder structure
@@ -16,9 +14,7 @@ With few more features added by `Scalingo`:
 * Configurable from var environment
 * File Uploads sent to S3 Bucket by default with [S3-Uploads plugin](https://github.com/humanmade/S3-Uploads)
 
-> Actual WordPress version : `5.5`
-
-## Installation
+> Actual WordPress version : `6.6.1`
 
 Please refer to the instructions in the [Scalingo documentation](https://doc.scalingo.com/platform/getting-started/getting-started-with-wordpress).
 
