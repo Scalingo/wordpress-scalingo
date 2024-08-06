@@ -2,7 +2,7 @@
   "name": "roots/bedrock",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
   "homepage": "https://roots.io/bedrock/",
   "authors": [
     {
@@ -34,31 +34,39 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "https://wpackagist.org"
+      "url": "https://wpackagist.org",
+      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "composer/installers": "^1.7",
-    "vlucas/phpdotenv": "^3.6.0",
-    "oscarotero/env": "^1.2.0",
-    "roots/wordpress": "~5.5",
+    "php": ">=8.0",
+    "composer/installers": "^2.2",
+    "vlucas/phpdotenv": "^5.5",
+    "oscarotero/env": "^2.1",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/bedrock-disallow-indexing": "^2.0",
+    "roots/wordpress": "6.6.1",
     "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0",
-    "humanmade/s3-uploads": "~3.0",
-    "wp-cli/wp-cli" : "~2.4",
-    "psy/psysh" : "~0.9",
-    "ext-imagick": "*"
+    "roots/wp-password-bcrypt": "1.1.0",
+    "wpackagist-theme/twentytwentyfour": "^1.0",
+    "humanmade/s3-uploads": "^3.0",
+    "ext-imagick": "*",
+    "ext-simplexml": "*"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.4.2",
-    "roave/security-advisories": "dev-master"
+    "squizlabs/php_codesniffer": "^3.7.1",
+    "roave/security-advisories": "dev-latest"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": [
+          "type:wordpress-muplugin",
+          "roots/bedrock-autoloader",
+          "roots/bedrock-disallow-indexing",
+          "humanmade/s3-uploads"
+      ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
@@ -66,9 +74,6 @@
     "paas": {}
   },
   "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
-    ],
     "test": [
       "phpcs"
     ]
