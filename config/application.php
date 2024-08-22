@@ -110,24 +110,6 @@ Config::define('LOGGED_IN_SALT', env('LOGGED_IN_SALT'));
 Config::define('NONCE_SALT', env('NONCE_SALT'));
 
 /**
- * S3 Uploads Plugin
- */
-Config::define('S3_UPLOADS_BUCKET', env('S3_UPLOADS_BUCKET'));
-Config::define('S3_UPLOADS_KEY', env('S3_UPLOADS_KEY'));
-Config::define('S3_UPLOADS_SECRET', env('S3_UPLOADS_SECRET'));
-Config::define('S3_UPLOADS_REGION', env('S3_UPLOADS_REGION'));
-Config::define('S3_UPLOADS_OBJECT_ACL', env('S3_UPLOADS_OBJECT_ACL'));
-if (env('S3_UPLOADS_HTTP_CACHE_CONTROL')) {
-    Config::define('S3_UPLOADS_HTTP_CACHE_CONTROL', env('S3_UPLOADS_HTTP_CACHE_CONTROL'));
-}
-if (env('S3_UPLOADS_HTTP_EXPIRES')) {
-    Config::define('S3_UPLOADS_HTTP_EXPIRES', env('S3_UPLOADS_HTTP_EXPIRES'));
-}
-if (env('S3_UPLOADS_BUCKET_URL')) {
-    Config::define('S3_UPLOADS_BUCKET_URL', env('S3_UPLOADS_BUCKET_URL'));
-}
-
-/**
  * Custom Settings
  */
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);
