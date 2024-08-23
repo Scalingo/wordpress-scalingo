@@ -27,12 +27,20 @@ Please refer to the instructions in the [Scalingo documentation](https://doc.sca
 
 ### Updating WordPress version
 
-Update package.json to update the WordPress branch you need.
+Update `composer.json` to update the WordPress branch you need.
+
+```json
+"require": {
+    // ...
+    "roots/wordpress": "~6.5",
+    // ...
+  }
+```
 
 Then run:
 
 ```shell
-└> docker-compose run --rm web composer update
+docker-compose run --rm web composer update
 ```
 
 Run locally to test WordPress is working, then commit `composer.json` and `composer.lock`.
