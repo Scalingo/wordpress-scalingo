@@ -1,0 +1,7 @@
+dependencies = []
+description = "Wordpress App"
+flags = ["scalingo-app"]
+owner = "team-infrastructure-services@scalingo.com"
+team = "IST"
+tier = 2
+version = "1.1.2"
